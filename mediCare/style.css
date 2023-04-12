@@ -44,11 +44,74 @@ nav{
     background-color: darkred;
     display: flex;
     justify-content: end;
-    gap: 4em;
     align-items: center;
     width: 100%;
     position: relative;
     position: fixed;
+    top: 3.5rem;
+}
+
+.menu{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    min-width: 25px;
+    border: solid 2px white;
+    margin-bottom: 0.5em;
+    margin-left: 0em;
+    margin-right: 2em;
+    cursor: pointer;
+}
+
+.nav_link{
+    width: 30%;
+    background-color: darkred;
+    top: 5.5rem;
+    position: fixed;
+    margin-right: 4em;
+    align-items: center;
+}
+
+.nav_link a{
+    display: block;
+    margin: 1em 0em 0.5em 1em;
+}
+
+.hide{
+    display: none;
+}
+
+@media screen and (min-width: 600px){
+    .menu{
+        display: block;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        min-width: 25px;
+        border: solid 2px white;
+        margin-bottom: 0.5em;
+        margin-left: 0em;
+        margin-right: 2em;
+        cursor: pointer;
+        display: none;
+    }
+
+    .nav_link{
+        max-height: 5vh;
+        top: 4rem;
+        background-color: darkred;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .nav_link a{
+        display: inline-block;
+        margin: 1em 0em 0.5em 1em;
+        margin-right: 2.5em;
+    }
 }
 
 .home{
@@ -97,8 +160,10 @@ ion-icon{
 
 .statistics{
     margin: 2em;
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 h2{
@@ -114,6 +179,17 @@ form{
     color: white;
     border-radius: 1em;
     list-style: none;
+}
+
+.cart_items{
+    display: block;
+    list-style-type: decimal;
+    font-size: 1.5rem;
+    margin: 1em 4em;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600px;
+    color: black;
 }
 
 .input-text{
@@ -150,7 +226,7 @@ article{
     padding-bottom: 2em;
 }
 
-.container{
+#container{
     border: transparent 1px;
     width: 50%;
     display: flex;
@@ -287,6 +363,10 @@ small{
     margin: 3em 5em;
 }
 
+form#hosp_section {
+    background-color: transparent;
+}
+
 .hospitals:hover{
     transform: none;
 }
@@ -295,24 +375,19 @@ small{
     border: solid 2px black;
     display: inline-block;
     align-items: center;
-    padding: 0.5em;
+    padding: 1em;
+    cursor: pointer;
 }
 
-.square:active{
-    background-color: blueviolet;
+/* .square:active{
+    background-color: white;
     border: solid black;
     padding: 0.3em;
     border-width: 1px 1px 0px 0px;
     transform: rotate(45deg);
-}
+} */
 
-.square:hover{
-    background-color: blueviolet;
-    border: solid black;
-    padding: 0.3em;
-    border-width: 0px 1px 1px 0px;
-    transform: rotate(45deg);
-}
+
 
 .main__article{
     width: 90%;
@@ -361,7 +436,7 @@ small{
     font-weight: 700px;
 }
 
-.fade ul{
+/* .fade{
     border: transparent;
     color: white;
     background-color: black;
@@ -372,6 +447,21 @@ small{
     top: 5;
     justify-content: end;
     align-items: end;
+} */
+
+.services{
+    border: transparent;
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+}
+
+.fade ul{
+    width: 50%;
+    display: block;
+}
+
+.list{
     display: none;
 }
 
@@ -382,6 +472,12 @@ small{
 .fade li{
     margin-bottom: 1em;
     margin-left: 1em;
+}
+
+.fade li:hover{
+    background-color: rgba(59, 56, 56, 0.5);
+    border-width: 100%;
+    cursor: pointer;
 }
 
 .hospital{
@@ -405,4 +501,110 @@ small{
     display: flex;
     align-items: end;
     justify-content: end;
+}
+
+.sign-up-box{
+    border-style: transparent;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    background-color: darkslategrey;
+    width: 50%;
+    justify-content: center;
+}
+
+.container_all{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input_all{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.input_all input{
+    width: 100%;
+    margin-top: 0.5em;
+    padding: 0.8em;
+    border-radius: 0.5em;
+    font-size: 1rem;
+}
+
+.loc{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.loc input{
+    width: 100%;
+    margin-top: 0.5em;
+    padding: 0.8em;
+    border-radius: 0.5em;
+    font-size: 1rem;
+}
+
+.sign-up-box h1{
+    color: black;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.sign-up-box h3{
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+#sign-up{
+    width: 30%;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.choose{
+    margin: 2em 0em;
+    margin-right: 2em;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+button{
+    width: 10%;
+    font-size: 1.3rem;
+    border-radius: 7px;
+    border-width: 0.1em;
+}
+
+button:hover{
+    background-color: brown;
+    cursor: pointer;
+}
+
+#sign-up:hover{
+    cursor: pointer;
+    background-color: brown;
+}
+
+body .sign-up-box{
+    margin: 5em 20em;
+    margin-bottom: 2em;
+}
+
+#whole{
+    margin-bottom: 2em;
 }

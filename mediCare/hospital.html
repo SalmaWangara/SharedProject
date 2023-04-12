@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="JSFiles/menu.js" defer></script>
+    <script src="JSFiles/hospital.js" defer></script>
     <title>Hospitals</title>
 </head>
 <body>
@@ -13,45 +15,57 @@
             <img src="./logo/Dr. Medic.png" alt="logo" width="70" height="60">
         <div/>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="hospital.html">Hospitals</a>
-            <a href="service.html">Services</a>
-            <a href="cart.html">Service Cart</a>
+            <div class="menu-list">
+                <span class="menu"></span>
+                <span class="menu"></span>
+                <span class="menu"></span>
+            </div>
+            <div class="nav_link hide">
+                <a href="index.html">Home</a>
+                <a href="hospital.html">Hospitals</a>
+                <a href="service.html">Services</a>
+                <a href="cart.html">Service Cart</a>
+            </div>
         </nav>
     </header>
     <article>
-        <div  class="home">
+        <div class="home">
             <h1>Hospitals</h1>
         </div>
         <div id="hosp">
-            <div class="hospital">
-                <span class="square"></span>
-                <a href="https://www.pendahealth.com/" class="hospitals">Penda Health</a>
-            </div>
-            <div class="hospital">
-                <span class="square"></span>
-                <a href="https://hospitals.aku.edu/Pages/default.aspx" class="hospitals">The Aga Khan University Hospitals</a>
-            </div>
-            <div class="hospital">
-                <span class="square"></span>
-                <a href="https://coptichospitals.com/" class="hospitals">Coptic Hospitals</a>
-            </div>
-            <div class="hospital">
-                <span class="square"></span>
-                <a href="https://nairobiwesthospital.com/" class="hospitals">The Nairobi West Hospital</a>
-            </div>
-            <div class="hospital">
-                <span class="square"></span>
-                <a href="https://knh.or.ke/" class="hospitals">Kenyatta National Hospital</a>
-            </div>
-            <div class="hospital">
-                <span class="square"></span>
-                <a href="https://www.kutrrh.go.ke/" class="hospitals">Kenyatta University Teaching, Referral and Research Hospital</a>
-            </div>
-            <div class="hospital">
-                <span class="square"></span>
-                <a href="https://www.mater.ie/" class="hospitals">The Mater Hospital</a>
-            </div>
+            <form method="post" id="hosp_section">
+                <div class="hospital">
+                    <input type="checkbox" value="Penda Health" class="square" name="Penda Health">
+                    <a href="https://www.pendahealth.com/" class="hospitals">Penda Health</a>
+                </div>
+                <div class="hospital">
+                    <input type="checkbox" value="The Aga Khan University Hospitals" class="square" name="The Aga Khan University Hospital">
+                    <a href="https://hospitals.aku.edu/Pages/default.aspx" class="hospitals">The Aga Khan University Hospitals</a>
+                </div>
+                <div class="hospital">
+                    <input type="checkbox" value="Coptic Hospitals" class="square" name="Coptic Hospitals">
+                    <a href="https://coptichospitals.com/" class="hospitals">Coptic Hospitals</a>
+                </div>
+                <div class="hospital">
+                    <input type="checkbox" value="The Nairobi West Hospital" class="square" name="The Nairobi West Hospital">
+                    <a href="https://nairobiwesthospital.com/" class="hospitals">The Nairobi West Hospital</a>
+                </div>
+                <div class="hospital">
+                    <input type="checkbox" value="Kenyatta National Hospital" class="square" name="Kenyatta National Hospital">
+                    <a href="https://knh.or.ke/" class="hospitals">Kenyatta National Hospital</a>
+                </div>
+                <div class="hospital">
+                    <input type="checkbox" value="Kenyatta University Teaching, Referral and Research Hospital" class="square" name="Kenyatta University Teaching, Referral and Research Hospital">
+                    <a href="https://www.kutrrh.go.ke/" class="hospitals">Kenyatta University Teaching, Referral and Research Hospital</a>
+                </div>
+                <div class="hospital">
+                    <input type="checkbox" value="The Mater Hospital" class="square" name="The Mater Hospital">
+                    <a href="https://www.mater.ie/" class="hospitals">The Mater Hospital</a>
+                </div>
+                <div class="choose">
+                    <button id="select" type="submit">Select</button>
+                </div>
+            </form>
         </div>
     </article>
     <footer>

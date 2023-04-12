@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="JSFiles/ambulance.js" defer></script>
+    <script src="JSFiles/menu.js" defer></script>
     <title>Services</title>
 </head>
 <body>
@@ -13,10 +15,17 @@
             <img src="./logo/Dr. Medic.png" alt="logo" width="70" height="60">
         <div/>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="hospital.html">Hospitals</a>
-            <a href="service.html">Services</a>
-            <a href="cart.html">Service Cart</a>
+            <div class="menu-list">
+                <span class="menu"></span>
+                <span class="menu"></span>
+                <span class="menu"></span>
+            </div>
+            <div class="nav_link hide">
+                <a href="index.html">Home</a>
+                <a href="hospital.html">Hospitals</a>
+                <a href="service.html">Services</a>
+                <a href="cart.html">Service Cart</a>
+            </div>
         </nav>
     </header>
     <article>
@@ -26,8 +35,8 @@
         <div class="main__article">
             <div class="img__ambulance">
                 <div class="fade">
-                    <h2>Ambulances</h2>
-                    <div>
+                    <h2 class="image">Ambulances</h2>
+                    <div class="services list">
                         <ul>
                             <li>Penda Ambulance</li>
                             <li>The Aga Khan Ambulance</li>
@@ -47,7 +56,7 @@
             <div class="img__prescription">
                 <div class="fade">
                     <h2>Prescriptions</h2>
-                    <div>
+<!--                     <div>
                         <ul>
                             <li>Malaria</li>
                             <li>Pneumonia</li>
@@ -57,7 +66,7 @@
                             <li>Headache</li>
                             <li>COVID-19</li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
