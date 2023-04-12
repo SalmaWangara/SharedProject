@@ -1,0 +1,47 @@
+{% extends 'mediCare/base.html' %}
+{%block title%} Services{%endblock%}
+{% block content %}
+    <article>
+        <div  class="home">
+            <h1>Services Offered</h1>
+        </div>
+        <div class="main__article">
+            <div class="img__ambulance">
+                <div class="fade">
+                    <h2>Ambulances</h2>
+                    <div>
+                        <ul>
+                            <li>Penda Ambulance</li>
+                            <li>The Aga Khan Ambulance</li>
+                            <li>Coptic Ambulance</li>
+                            <li>The Nairobi West Ambulance</li>
+                            <li>Kenyatta Ambulance</li>
+                            <li>Kenyatta University Ambulance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="img__hospital">
+                <div class="fade">
+                    <a href="{% url 'hospitals'%}">Hospitals</a>
+                </div>
+            </div>
+            <div class="img__prescription">
+                <div class="fade">
+                    <h2>Prescriptions</h2>
+                    <div>
+                        <ul>
+                            <li>Malaria</li>
+                            <li>Pneumonia</li>
+                            <li>Typhoid</li>
+                            <li>Common cold</li>
+                            <li>Hepatitis</li>
+                            <li>Headache</li>
+                            <li>COVID-19</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+{%endblock%}

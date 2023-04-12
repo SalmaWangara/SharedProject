@@ -1,0 +1,14 @@
+#ignore sensitive data eg secret keys
+.env
+# ignore static files
+/static/
+
+# Ignore log files
+*.log
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore database files
+*.sqlite3
