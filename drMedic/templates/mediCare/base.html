@@ -9,6 +9,8 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'logo/drMed.ico' %}">
     <link class='favicon' rel="mask-icon" href="{% static 'favicon.ico' %}" color="#000000">
     <link rel="stylesheet" href="{% static 'styles/styles.css'%}">
+    <script src="{%static 'js/menu.js'%}" defer></script>
+    <script src="{%static 'js/cart.js'%}" defer></script>
     <title>{% block title %}{%endblock%}| Dr. Medic</title>
     <script src="index.js" defer></script>
 </head>
@@ -24,8 +26,11 @@
                     <a href="{% url 'hospitals'%}">Hospitals</a>
                     <a href="{% url 'services'%}">Services</a>
                     <a href="{% url 'cart'%}">Service Cart</a>
+                    {% comment %} {% if request.user.is_authenticated%}
+                    {%else%} {% endcomment %}
                     <a href="{%url 'login'%}">Login</a>
                     <a href="{%url 'signup'%}">SignUp</a>
+                    {% comment %} {%endif%} {% endcomment %}
                 </nav>
         </header>
         {%block content%}

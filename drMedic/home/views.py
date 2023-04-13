@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group, User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from django.core.files.storage import FileSystemStorage
+# from django.core.files.storage import FileSystemStorage
 # Create your views here.
 
 
@@ -13,12 +13,36 @@ def home(request):
 # def services(request):
 #     return render(request, 'services.html')
 
+def logIn(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data= request.POST)
+        if form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                logIn(request, user)
+                return redirect('home')
+            else:
+                return redirect('signup')
+    else:
+        form =AuthenticationForm()
+    return render(request, 'mediCare/login.html', {'form':form})
+
 
 def signUp(request):
-    form = SignupForm()
-    return render(request, 'mdeiCare/signup.html', {
-        'form': form
-    })
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            signUp_user = User.objects.get(username = username)
+            customer_group= Group.objects.get(name='Customer')
+            customer_group.user_set.add(signUp_user)
+    else:
+        form = SignupForm()
+    return render(request, 'mediCare/sign-up.html', {'form':form})
+
 
 
 def customer_login(request):
@@ -35,18 +59,6 @@ def customer_login(request):
                 return redirect('customer_register')
     else:
         form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
-
-
-# def client_register(request):
-#     form = ClientSignUpForm(request.POST)
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             form.save()
-#             username = form.cleaned_data.get('username')
-#             signup_user = User.objects.get(username=username)
-#             client_group = Group.objects.get(name='Client')
-#             client_group.user_set.add(signup_user)
-#         else:
-#             form = ClientSignUpForm()
-#     return render(request, 'accounts/clients/register.html', {'form': form})
+    return render(request, 'mediCare/login.html', {'form': form})
+def logout(request):
+    pass

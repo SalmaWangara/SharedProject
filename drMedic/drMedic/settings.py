@@ -29,6 +29,9 @@ DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT = '/'
 
 # Application definition
 
@@ -80,7 +83,7 @@ WSGI_APPLICATION = 'drMedic.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.getenv('DATABASE_NAME'),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
