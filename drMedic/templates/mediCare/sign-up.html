@@ -1,21 +1,25 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'styles/styles.css'%}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="{%static 'js/signup.js'%}" defer></script>
-    <title>Sign up</title>
-</head>
-<body id="whole">
-    <div class="sign-up-box">
-        <h1>Sign Up</h1>
-        <h3>Welcome to Dr. Medic, create an account with us!</h3>
-        <form id="signup-form">
-            <div class="container_all">
+    <head>
+        <link rel="stylesheet" href="{% static 'styles/styles.css'%}">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="{% static 'logo/drMed.ico' %}">
+        <script src="{%static 'js/login.js'%}" defer></script>
+        <title>SignUp | Dr. Medic</title>
+    </head>
+    <body class="whole">
+        <div class="img-log">
+            <div class="img_back">
+                <small><b>Copyright owned by Dr. Medic</b></small>
+            </div>
+        </div>
+        <form method='POST' action='.'>
+        {% csrf_token %}
+        <div id="container">
+            <div class="box-container">
                 <div class="input_all">
                     <label for="first-name">First Name</label>
                     <input type="text" id="first-name" name="first_name" required>
@@ -40,8 +44,8 @@
                     <input type="Submit" id="sign-up" Value="Signup">
                 </div>
             </div>
+        </div>
+        <a href="{% url 'login' %}">I already have an account</a>
         </form>
-    </div>
 </body>
-
 </html>
