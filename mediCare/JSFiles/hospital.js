@@ -14,6 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.localStorage.setItem('hospitals', JSON.stringify(reqBody));
-    window.location.href = '/mediCare/cart.html';
+    window.location.href = 'cart.html';
   });
 });
