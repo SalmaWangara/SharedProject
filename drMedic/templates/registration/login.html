@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'styles/styles.css'%}">
+        <link class='favicon' rel="mask-icon" href="{% static 'favicon.ico' %}" color="#000000">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{%static 'js/login.js'%}" defer></script>
+        <title>Login | Dr. Medic</title>
+    </head>
+    <body class="whole">
+        <div class="img-log">
+            <div class="img_back">
+                <small><b>Copyright owned by Dr. Medic</b></small>
+            </div>
+        </div>
+        <form method='POST'>
+            {% csrf_token %}
+        <div id="container">
+            <div class="box-container">
+                <div class="top-header">
+                    <h1>Have an account? Log in</h1>
+                </div>
+                <div class="input-text">
+                    <input type="email" class="input" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-text">
+                    <input type="password" class="input" id="password" placeholder="Password" required>
+                </div>
+            </form>
+                <div>
+                    <input type="Submit" id="Log-in" Value="Login">
+                </div>
+                <div class="button_link">
+                    <div class="left">
+                        <input type="checkbox" id="check-box">
+                        <label for="check-box">Remember Me</label>
+                    </div>
+                    <div>
+                        <a href="#" class="pword">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="new_user">
+                    <p>New user?</p>
+                    <a href="{%url 'signup'%}" class="signin__link">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
